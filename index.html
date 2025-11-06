@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Makukhin</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- GSAP + ScrollTrigger + ScrollSmoother -->
+    <script src="libs/gsap/gsap.min.js" defer></script>
+	<script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+	<script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Physics2DPlugin.min.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <link rel="stylesheet" href="./global.css" />
+
+    <style>
+      body {
+        overflow-x: hidden;
+        background: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper bg-white">
+      <div class="content min-h-screen">
+        <!-- Hero Section -->
+        <section class="secHero relative min-h-[130vh] flex bg-black overflow-hidden">
+          <div class="pl-0 md:pl-20 lg:pl-48">
+            <div data-speed="0.5" class="hero__allTitle text-left pl-[10vw] md:pl-0 md:pt-36">
+              <p class="hero__prefix w-[70vw] font-[pixel-c] text-white leading-relaxed pl-2">
+                &lt;Full-Stack Engineering&gt; &nbsp; &lt;UX/UI&gt; &nbsp; &lt;Resume&gt;
+              </p>
+              <h1 class="hero__title text-[15vw] lg:text-[13vw] text-white  font-[unbound-c] font-bold md:-mt-8">
+                HELLO
+              </h1>
+            </div>
+          </div>
+
+          <div class="absolute w-[20vw] bottom-[0] sm:bottom-[10vh] -left-[5vw] z-1 rotate-270">
+            <p class="font-[pixel-c] text-white text-2xl text-nowrap">
+              welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website
+            </p>
+          </div>
+
+            <img src="./images/comp.png" data-speed="0.8" alt="Hero Image" class="hero__comp max-w-none absolute bottom-[30vh] -right-70 sm:right-0 z-10" />
+            <img src="./images/arrow.png" alt="Hero Image" class="w-20 absolute bottom-[32vh] left-1/2 -ml-8 z-1 animate-bounce" />
+            <img src="./images/dots.svg" data-speed="0.3" alt="down" class="hero__things  absolute bottom-10 -left-35 z-1" />
+            <img src="./images/dots.svg" data-speed="0.6" alt="up" class=" hero__things  absolute -top-20 -right-35 sm:-top-10 z-1" />
+            <img src="./images/kreuz.svg" data-speed="0.4" alt="Hero Image" class="hero__things absolute -top-35 -right-35 sm:-top-10 z-1" />
+        </section>
+
+
+
+        <!-- <h1 class="text-2xl md:text-3xl font-bold text-white uppercase text-center leading-tight relative z-1">
+          <span class="inline-block" id="howabout_text">
+            How about we create something bold,
+          </span>
+          <span id="together_text" class="inline-block opacity-0 scale-75 tracking-tight uppercase">
+            together
+          </span>
+        </h1>
+        <div class="flex flex-col space-y-2 z-1">
+          <a href="#" class="underline hover:text-gray-300 transition">My CV ↗</a>
+          <a href="#" class="underline hover:text-gray-300 transition">My GitHub ↗</a>
+        </div> -->
+
+
+      
+
+
+
+
+
+
+        <!-- Overlay Sections -->
+        <div class="containerC">
+            <div id="containerRef"  class="containerRef panels flex relative">
+              <section class=" absolute top-0 left-0 panel min-h-screen bg-[url(./images/bgColors.png)] bg-cover  flex items-center justify-center z-0 overflow-hidden" >
+                <div class=" sm:max-w-4/5 mx-auto px-4 w-full h-[70vh] z-5 relative flex flex-col justify-between pt-[10vh]">
+                    
+                    <div class="text-white pt-[0vh] md:pt-[10vh]">
+                      <h2 class="about__title font-[unbound-c] font-bold leading-tight">
+                        I'm
+                        <br />
+                        Max Makukhin.
+                      </h2>
+                    </div>
+    
+                    
+    
+                    <div class="flex text-white justify-end">
+                      <h2 class="about__title font-[unbound-c] font-bold leading-tight">
+                        Full Stack
+                        <br />
+                        developer, UX/UI 
+                        <br />
+                        engineer and
+                        <br />
+                        project manager.
+                      </h2>
+                    </div>
+                </div>
+                <div  data-speed="0.8" class="absolute -bottom-[5vh] md:bottom-20 mx-auto z-2">
+                    <img
+                      src="./images/me.png"
+                      alt="Profile"
+                      class="h-[90vh] sm:h-[100vh] w-auto object-cover"
+                    />
+                </div>
+                <img src="./images/dots.svg"  alt="Hero Image" class=" hero__things  absolute top-10 -right-35 z-1" />
+                <img src="./images/26.svg"  alt="Hero Image" class=" about__26  absolute top-[15vh] md:top-[15vh] right-[30vw] lg:right-[38vw] z-1" />
+                <img src="./images/dots&arrow.svg"  alt="Hero Image" class=" about__dotsArrow  absolute bottom-[0vh] -left-10 z-3" />
+                
+                <div  class=" absolute w-[20vw] bottom-[20vh] md:bottom-[15vh] left-[10vw] md:left-[32vw] z-2">
+                  <h2 class='about__letsGet font-[unbound-c] font-normal rotate-270 text-white text-nowrap'>Let's get acquainted.</h2>
+                </div>
+              </section>
+              <section id="overlayRef" style="clip-path: inset(0% 0% 0% 0%)" class=" overlayRef absolute isolate top-0 left-0 panel min-h-screen bg-white bg-[url(./images/lines.svg)] bg-contain flex items-center justify-center overflow-hidden" >
+              <div class=" sm:max-w-4/5 mx-auto px-4 w-full h-[70vh] z-10 relative flex flex-col justify-between pt-[10vh]">
+                    <div class="text-black pt-[0vh] md:pt-[10vh] ">
+                      <h2 class="about__title font-[unbound-c] font-bold leading-tight">
+                        Who
+                        <br />
+                        am I?
+                      </h2>
+                    </div>
+                    <div class="flex justify-end pr-10 sm:pr-0">
+                      <h2 class="about__title font-[unbound-c] font-bold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                        What<br />can I do?
+                      </h2>
+                    </div>
+                </div>
+                <div  data-speed="0.8" class="absolute -bottom-[5vh] md:bottom-20 mx-auto z-1">
+                    <img
+                      src="./images/me.png"
+                      alt="Profile"
+                      class="h-[90vh] sm:h-[100vh] w-auto object-cover"
+                    />
+                </div>
+                <div class="absolute top-[15vh] md:top-[15vh] right-[30vw] lg:right-[30vw] z-0"><h2 class='font-[unbound-c] font-normal text-3xl text-black'>Age?</h2></div>
+                
+                <div  class=" absolute w-[20vw] bottom-[20vh] md:bottom-[15vh] left-[10vw] md:left-[32vw] z-1">
+                  <h2 class='about__letsGet font-[unbound-c] font-normal rotate-270 text-white text-nowrap'>Let's get acquainted.</h2>
+                </div>
+              </section>
+              
+            </div>
+          </div>
+
+
+          <section class="pin_section_cactus relative w-full flex flex-col items-center justify-center bg-white overflow-hidden md:overflow-visible z-10">
+        
+            <section class="first_s  w-full max-w-7xl h-[100vh] flex flex-col md:flex-row items-center justify-center place-self-center">
+              <div class="w-full md:w-1/2 h-[50%] md:h-full flex justify-center pt-15 sm:p-10">
+                <img
+                  data-speed="0.8"
+                  src="./images/phone1.jpg"
+                  alt="Example"
+                  class="cactus_sec_img1 w-full sm:w-[40vw] h-full object-contain "
+                />
+              </div>
+    
+              
+              <div class="w-full md:w-1/2 h-[60%] md:h-full flex items-center text-center p-20 sm:p-10">
+                <div>
+                  <h2 class="about__title font-[druk] font-bold leading-tight">All I do is create web applications.</h2>
+                </div>
+              </div>
+            </section>
+            <section class="second_s absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-screen flex flex-col md:flex-row items-center justify-center place-self-center">
+              <div class=" w-full md:w-1/2 h-[50%] pt-20 md:h-full flex items-center justify-center">
+                <img
+                  src="./images/phone2.jpg"
+                  alt="Example"
+                  class="cactus_sec_img2 w-full sm:w-[40vw] h-full object-contain will-change-transform"
+                />
+              </div>
+    
+              <div class="w-full md:w-1/2 h-[60%] md:h-full flex items-center text-center p-20 sm:p-10">
+                <div class="relative">
+                  
+                  <h2 class="about__title font-[druk] font-bold leading-tight">
+                    They 
+                      <span class="relative">
+                      resolve
+                      <img src="./images/cactus.svg" alt="cactus" class=" cactus absolute z-1 will-change-transform" />
+                      </span> 
+                    your business needs.</h2>
+                </div>
+              </div>
+            </section>
+            <img src="./images/flamingo.svg" alt="up" class=" hero__things second_sf absolute top-0 -right-[15%] sm:-right-[10%] z-0" />
+            <img src="./images/leave2.svg" alt="up" class=" hero__things second_sl absolute top-0 -right-[25%] sm:-right-[15%] z-1" />
+            <img src="./images/leave1.svg" alt="up" class=" hero__things second_sl2 absolute -top-[5%] -left-[25%] sm:-left-[18%] z-1" />
+            <img src="./images/tree.svg" alt="tree" class=" hero__things second_s absolute -bottom-[10%] right-0 z-1" />
+        </section>
+
+        
+
+
+
+        
+        
+
+        <!-- Menu Section -->
+        <section id="reveal-section" class="will-change-transform relative h-screen overflow-hidden z-1">
+          <!-- Нижняя секция (будет раскрываться под маской) -->
+          <div gradient-evolve class="h-full flex flex-col items-center justify-center z-1 relative overflow-hidden">
+            <div class="container mx-auto px-8 py-12 flex flex-col lg:flex-row justify-between z-2">
+
+              <!-- Левая колонка -->
+              <div class="flex flex-col justify-between lg:w-1/2 space-y-8">
+                <div class="flex flex-col justify-between space-y-16">
+                  <!-- Заголовок -->
+                  <h1 class="text-2xl md:text-5xl -ml-2 font-[druk] text-white uppercase text-left leading-tight z-1">
+                    <span class="inline-block" id="howabout_text">
+                      How about we create something bold,
+                    </span>
+                    <span id="together_text" class="inline-block opacity-0 scale-75 tracking-tight uppercase">
+                      together
+                    </span>
+                  </h1>
+          
+                  <!-- Ссылки под заголовком -->
+                  <div class=" together_all flex flex-col space-y-2">
+                    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"
+                       class="underline hover:text-gray-300 transition">My CV ↗</a>
+                    <a href="http://linkedin.com/in/makukhin-dev" class="underline hover:text-gray-300 transition">My LinkedIn ↗</a>
+                    <a href="http://github.com/Sskrepkaa" class="underline hover:text-gray-300 transition">My GitHub ↗</a>
+                  </div>
+                </div>
+          
+              </div>
+          
+              <!-- Правая колонка -->
+              <div class="together_all flex flex-col items-end lg:w-1/2 space-y-6 mt-12 lg:mt-42 z-11">
+                <!-- Форма -->
+                <form 
+                  id="contact-form"
+                  class="w-full  max-w-md  space-y-4"
+                >
+                  <input type="hidden" name="_redirect" value="/thanks.html" />
+                  <h3 class="text-2xl md:text-4xl  font-[druk] text-white uppercase text-right">Let's talk</h3>
+          
+                  <input type="email" name="email" placeholder="Email, so we don’t lose touch"
+                         class="w-full bg-white/70 border border-white/70 rounded-xl px-4 py-2 focus:border-white transition" />
+          
+                  <textarea name="message" rows="6" placeholder="Drop a few lines — we’ll figure it out from there"
+                            class="w-full bg-white/70 border border-white/70 rounded-xl px-4 py-2 focus:border-white transition"></textarea>
+          
+                  <button type="submit" id="submit-btn"
+                          class="float-right bg-white/70 text-black px-6 py-2 rounded-xl hover:bg-gray-200 transition">
+                    Send it!
+                  </button>
+                  <p id="form-status" class="text-white flex text-sm  opacity-0 transition-opacity duration-300">
+                    <!-- сюда будем писать статус -->
+                  </p>
+                </form>
+              </div>
+            </div>
+            <!-- Policy внизу -->
+            <div class=" together_all absolute bottom-15 left-5">
+              <a href="#" class="underline text-sm hover:text-gray-400 transition">Policy ↗</a>
+            </div>
+          </div>
+        
+          <!-- SVG с маской -->
+          <svg class="absolute inset-0 w-full h-full z-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <defs>
+                <mask id="cross-mask" maskUnits="objectBoundingBox">
+                  <rect width="100%" height="100%" fill="white" />
+                  <g id="cross-group" >
+                    <path d="M108 88.7c-10.8 0-19.7 8.8-19.7 19.7v47.4c0 1.9-1.5 3.4-3.4 3.4h-8.6
+                      c-1.9 0-3.4-1.5-3.4-3.4v-47.4c0-10.8-8.8-19.7-19.7-19.7H6.4
+                      c-1.9 0-3.4-1.5-3.4-3.4v-8c0-1.9 1.5-3.4 3.4-3.4h46.9
+                      c10.8 0 19.7-8.8 19.6-19.7V6.4c0-1.9 1.5-3.4 3.4-3.4H85
+                      c1.9 0 3.4 1.5 3.4 3.4v47.8c0 10.8 8.8 19.7 19.7 19.7h46.6
+                      c1.9 0 3.4 1.5 3.4 3.4v8c0 1.9-1.5 3.4-3.4 3.4H108z" fill="black"/>
+                  </g>
+                </mask>
+              </defs>
+            
+              <!-- Белый слой с маской -->
+              <rect width="100%" height="100%" fill="white" mask="url(#cross-mask)" />
+            </svg>
+        </section>
+
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

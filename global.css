@@ -1,0 +1,160 @@
+/* Подключаем шрифт Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Глобальные переменные */
+:root {
+  --index: calc(1vw + 1vh);
+  --color-header: #f4efec;
+  --color-text: #cdc6c3;
+  --gallery-gap: calc(var(--index) * 7.5);
+}
+
+/* Базовые стили */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Подключение кастомных шрифтов */
+@font-face {
+  font-family: 'pixel-c';
+  src: url('./fonts/PixelifySans-Regular.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'druk';
+  src: url('./fonts/DrukWideCyWeb-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'unbound-c';
+  src: url('./fonts/Unbounded-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'unbound-c';
+  src: url('./fonts/Unbounded-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+/* Компонентные классы */
+.hero__title {
+  letter-spacing: calc(var(--index) / 6);
+}
+
+.hero__prefix {
+  font-size: calc(var(--index) * 1);
+  letter-spacing: calc(var(--index) / 6);
+}
+
+.hero__comp {
+  width: calc(var(--index) * 40);
+  will-change: transform;
+  transition: var(--transition);
+}
+
+.hero__things {
+  width: calc(var(--index) * 20);
+}
+
+.about__title {
+  font-size: calc(var(--index) * 1.5);
+  letter-spacing: calc(var(--index) / 18);
+}
+
+.about__26 {
+  width: calc(var(--index) * 6);
+}
+
+.about__dotsArrow {
+  width: calc(var(--index) * 15);
+}
+
+.about__letsGet {
+  font-size: calc(var(--index) * 1.5);
+  letter-spacing: calc(var(--index) / 4);
+}
+
+.container {
+  overflow: hidden;
+}
+
+.panels {
+  height: 100vh;
+}
+
+.panel {
+  width: 100vw;
+}
+
+.cactus {
+  width: 3vw;
+  top: -4.3vw;
+  left: calc(var(--index) * 5.2);
+}
+
+.circle__image {
+  width: calc(var(--index) * 30);
+}
+
+.textMenu {
+  gap: calc(var(--index) * 20);
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+  .hero__comp {
+    width: calc(var(--index) * 60);
+    will-change: transform;
+    transition: var(--transition);
+  }
+}
+
+
+@keyframes loopGradient {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+[gradient-evolve] {
+  position: relative;
+  background-image: linear-gradient(
+    255deg,
+    #facb0e,
+    #f06ba8 30%,
+    #78bae6 65%,
+    #fff
+  );
+}
+
+[gradient-evolve]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    255deg,
+    #f06ba8,
+    #facb0e 30%,
+    #78bae6 65%,
+    #fff
+  );
+  animation: loopGradient 6s ease-in-out infinite;
+  opacity: 0;
+}

@@ -24,28 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	function random(min, max) {
 		return Math.random() * (max - min) + min;
 	  }
-		
+
 	// Анимация появления заголовка
 	gsap.fromTo('.hero__allTitle', { opacity: 1 }, {
 		opacity: 0,
-		
 		scrollTrigger: {
 		trigger: '.hero__allTitle',
 		start: "top top",
       	end: "+=300",
 		scrub: true
 		},
-	})
-	gsap.to('.test', {
-		x: random(-60, 60),
-		y: random(-60, 60),
-		rotation: random(-15, 15),
-		scale: random(0.95, 1.05),
-		opacity: random(0.8, 1),
-		duration: random(5, 10),
-		ease: "sine.inOut",
-		yoyo: true,
-		repeat: -1,
 	})
 	gsap.fromTo('.hero__comp', { 
 		scale: 0.8,
@@ -54,11 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		scale: 1.4,
 		x: 600,
 		scrollTrigger: {
-		trigger: '.secHero',
-		start: 'top top',
-		//markers: true,
-		end: '+=500',
-		scrub: true
+			trigger: '.secHero',
+			start: 'top top',
+			end: '+=500',
+			scrub: true
 		}
 	})
 	gsap.fromTo('.hero__comp', { 
@@ -127,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			start: 'center 40%',
 			end: '+=100',
 			scrub: true,
-			//markers: true,
 		}
 	})
 	gsap.fromTo(".second_text", {
@@ -170,13 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	})
 	gsap.fromTo(".first_s", {
 		opacity: 0,
-		ease: "none",
 		}, {
 		opacity: 1,
 		scrollTrigger: {
 			trigger: '.first_s',
 			start: 'top top',
-			end: '+=300',
+			end: '+=30%',
 			scrub: true,
 		}
 	})
@@ -185,31 +170,30 @@ document.addEventListener("DOMContentLoaded", () => {
 		opacity: 0,
 		scrollTrigger: {
 			trigger: '.first_s',
-			start: '500 top',
-			end: '+=300',
+			start: '60% top',
+			end: '+=30%',
 			scrub: true,
 		}
 	})
 	gsap.fromTo(".second_s", {
 		opacity: 0,
-		ease: "none",
 		}, {
 		opacity: 1,
 		scrollTrigger: {
 			trigger: '.first_s',
-			start: '900 top',
-			end: '+=300',
+			start: '100% top',
+			end: '+=30%',
 			scrub: true,
 		}
 	})
 	gsap.fromTo(".cactus_sec_img2", {
-		y: -30,
+		y: 0,
 		}, {
-		y: 30,
+		y: 80,
 		scrollTrigger: {
 			trigger: '.first_s',
-			start: '900 top',
-			end: '+=600',
+			start: '100% top',
+			end: '+=100%',
 			scrub: true,
 		}
 	})
@@ -218,16 +202,33 @@ document.addEventListener("DOMContentLoaded", () => {
 		x: 50,
 		y: -30,
 		rotation: -45,
-		ease: "power4.out",
 		}, {
 		opacity: 1,
 		x: 0,
 		y: 0,
 		rotation: 0,
+		ease: "power4.out",
 		scrollTrigger: {
 			trigger: '.first_s',
-			start: '900 top',
-			end: '+=200',
+			start: '120% top',
+			end: '+=40%',
+			scrub: true,
+		}
+	})
+	gsap.fromTo(".second_sf", {
+		x: 0,
+		y: 0,
+		rotation: 0,
+		}, {
+		opacity: 0,
+		x: -30,
+		y: 50,
+		rotation: 25,
+		ease: "power4.in",
+		scrollTrigger: {
+			trigger: '.first_s',
+			start: '160% top',
+			end: '+=40%',
 			scrub: true,
 		}
 	})
@@ -238,16 +239,34 @@ document.addEventListener("DOMContentLoaded", () => {
 		x: 30,
 		y: 50,
 		rotation: 25,
-		ease: "slow(0.7, 0.7, false)",
+		
 		}, {
 		opacity: 1,
 		x: 0,
 		y: 0,
 		rotation: 0,
+		ease: "power4.out",
 		scrollTrigger: {
 			trigger: '.first_s',
-			start: '900 top',
-			end: '+=300',
+			start: '125% top',
+			end: '+=40%',
+			scrub: true,
+		}
+	})
+	gsap.fromTo(".second_sl", {
+		x: 0,
+		y: 0,
+		rotation: 0,
+		}, {
+		opacity: 0,
+		x: -30,
+		y: -50,
+		rotation: -25,
+		ease: "power4.in",
+		scrollTrigger: {
+			trigger: '.first_s',
+			start: '165% top',
+			end: '+=35%',
 			scrub: true,
 		}
 	})
@@ -256,16 +275,69 @@ document.addEventListener("DOMContentLoaded", () => {
 		x: -30,
 		y: 50,
 		rotation: 25,
-		ease: "power2.out",
+		
 		}, {
 		opacity: 1,
 		x: 0,
 		y: 0,
 		rotation: 0,
+		ease: "power2.out",
 		scrollTrigger: {
 			trigger: '.first_s',
-			start: '950 top',
-			end: '+=300',
+			start: '120% top',
+			end: '+=40%',
+			scrub: true,
+		}
+	})
+	gsap.fromTo(".second_sl2", {
+		x: 0,
+		y: 0,
+		rotation: 0,
+		}, {
+		opacity: 0,
+		x: 30,
+		y: -50,
+		rotation: -25,
+		ease: "power4.in",
+		scrollTrigger: {
+			trigger: '.first_s',
+			start: '160% top',
+			end: '+=40%',
+			scrub: true,
+		}
+	})
+	gsap.fromTo(".second_stree", {
+		x: -50,
+		y: 10,
+		rotation: 10,
+		opacity: 0,
+		}, {
+		x: 0,
+		y: 0,
+		rotation: 0,
+		opacity: 1,
+		ease: "power2.out",
+		scrollTrigger: {
+			trigger: '.first_s',
+			start: '120% top',
+			end: '+=40%',
+			scrub: true,
+		}
+	})
+	gsap.fromTo(".second_stree", {
+		x: 0,
+		y: 0,
+		rotation: 0,
+		}, {
+		x: 50,
+		y: -10,
+		rotation: -10,
+		opacity: 0,
+		ease: "power2.in",
+		scrollTrigger: {
+			trigger: '.first_s',
+			start: '160% top',
+			end: '+=40%',
 			scrub: true,
 		}
 	})
@@ -274,21 +346,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		opacity: 0,
 		scrollTrigger: {
 			trigger: '.first_s',
-			start: '1550 top',
-			end: '+=300',
+			start: '170% top',
+			end: '+=30%',
 			scrub: true,
 		}
 	})
 	gsap.to(".cactus",  {
 		rotate: 75,
 		duration: 3,
-		x: 30,
-		y:22,
+		x: '3vw',
+		y: '2vh',
 		scrollTrigger: {
 		trigger: '.first_s',
-		start: '1150 top',
-		end: '+=200',
-		ease: "bounce.out",
+		start: '145% top',
+		end: '+=20%',
 		//markers: true,
 		scrub: true,
 		}

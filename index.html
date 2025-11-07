@@ -28,7 +28,7 @@
     <div class="wrapper bg-white">
       <div class="content min-h-screen">
         <!-- Hero Section -->
-        <section class="secHero relative min-h-[130vh] flex bg-black overflow-hidden">
+        <section class="secHero relative min-h-[130vh] flex bg-black overflow-hidden will-change-transform">
           <div class="pl-0 md:pl-20 lg:pl-48">
             <div data-speed="0.5" class="hero__allTitle text-left pl-[10vw] md:pl-0 md:pt-36">
               <p class="hero__prefix w-[70vw] font-[pixel-c] text-white leading-relaxed pl-2">
@@ -48,7 +48,7 @@
 
             <img src="./images/comp.png" data-speed="0.8" alt="Hero Image" class="hero__comp max-w-none absolute bottom-[30vh] -right-70 sm:right-0 z-10" />
             <img src="./images/arrow.png" alt="Hero Image" class="w-20 absolute bottom-[32vh] left-1/2 -ml-8 z-1 animate-bounce" />
-            <img src="./images/dots.svg" data-speed="0.3" alt="down" class="hero__things  absolute bottom-10 -left-35 z-1" />
+            <img src="./images/dots.svg" data-speed="0.3" alt="down" class="hero__things  absolute bottom-0 -left-20 sm:bottom-10 sm:-left-35 z-1" />
             <img src="./images/dots.svg" data-speed="0.6" alt="up" class=" hero__things  absolute -top-20 -right-35 sm:-top-10 z-1" />
             <img src="./images/kreuz.svg" data-speed="0.4" alt="Hero Image" class="hero__things absolute -top-35 -right-35 sm:-top-10 z-1" />
         </section>
@@ -78,7 +78,7 @@
 
         <!-- Overlay Sections -->
         <div class="containerC">
-            <div id="containerRef"  class="containerRef panels flex relative">
+            <div id="containerRef"  class="containerRef panels flex relative will-change-transform">
               <section class=" absolute top-0 left-0 panel min-h-screen bg-[url(./images/bgColors.png)] bg-cover  flex items-center justify-center z-0 overflow-hidden" >
                 <div class=" sm:max-w-4/5 mx-auto px-4 w-full h-[70vh] z-5 relative flex flex-col justify-between pt-[10vh]">
                     
@@ -184,11 +184,11 @@
                 <div class="relative">
                   
                   <h2 class="about__title font-[druk] font-bold leading-tight">
-                    They 
+                    They
                       <span class="relative">
                       resolve
                       <img src="./images/cactus.svg" alt="cactus" class=" cactus absolute z-1 will-change-transform" />
-                      </span> 
+                      </span>
                     your business needs.</h2>
                 </div>
               </div>
@@ -196,7 +196,7 @@
             <img src="./images/flamingo.svg" alt="up" class=" hero__things second_sf absolute top-0 -right-[15%] sm:-right-[10%] z-0" />
             <img src="./images/leave2.svg" alt="up" class=" hero__things second_sl absolute top-0 -right-[25%] sm:-right-[15%] z-1" />
             <img src="./images/leave1.svg" alt="up" class=" hero__things second_sl2 absolute -top-[5%] -left-[25%] sm:-left-[18%] z-1" />
-            <img src="./images/tree.svg" alt="tree" class=" hero__things second_s absolute -bottom-[10%] right-0 z-1" />
+            <img src="./images/tree.svg" alt="tree" class=" hero__things  second_stree absolute -bottom-[10%] right-0 z-1" />
         </section>
 
         
@@ -213,27 +213,24 @@
             <div class="container mx-auto px-8 py-12 flex flex-col lg:flex-row justify-between z-2">
 
               <!-- Левая колонка -->
-              <div class="flex flex-col justify-between lg:w-1/2 space-y-8">
-                <div class="flex flex-col justify-between space-y-16">
-                  <!-- Заголовок -->
-                  <h1 class="text-2xl md:text-5xl -ml-2 font-[druk] text-white uppercase text-left leading-tight z-1">
-                    <span class="inline-block" id="howabout_text">
-                      How about we create something bold,
-                    </span>
-                    <span id="together_text" class="inline-block opacity-0 scale-75 tracking-tight uppercase">
-                      together
-                    </span>
-                  </h1>
-          
-                  <!-- Ссылки под заголовком -->
-                  <div class=" together_all flex flex-col space-y-2">
-                    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"
-                       class="underline hover:text-gray-300 transition">My CV ↗</a>
-                    <a href="http://linkedin.com/in/makukhin-dev" class="underline hover:text-gray-300 transition">My LinkedIn ↗</a>
-                    <a href="http://github.com/Sskrepkaa" class="underline hover:text-gray-300 transition">My GitHub ↗</a>
-                  </div>
+              <div class="flex flex-col lg:w-1/2 space-y-8">
+                <!-- Заголовок -->
+                <h1 class="text-4xl md:text-5xl -ml-2 font-[druk] text-white uppercase text-left leading-tight z-1">
+                  <span class="inline-block" id="howabout_text">
+                    How about we create something bold,
+                  </span>
+                  <span id="together_text" class="inline-block opacity-0 scale-75 tracking-tight uppercase">
+                    together
+                  </span>
+                </h1>
+        
+                <!-- Ссылки под заголовком -->
+                <div class=" together_all flex flex-col space-y-2">
+                  <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"
+                      class="underline hover:text-gray-300 transition">My CV ↗</a>
+                  <a href="http://linkedin.com/in/makukhin-dev" class="underline hover:text-gray-300 transition">My LinkedIn ↗</a>
+                  <a href="http://github.com/Sskrepkaa" class="underline hover:text-gray-300 transition">My GitHub ↗</a>
                 </div>
-          
               </div>
           
               <!-- Правая колонка -->

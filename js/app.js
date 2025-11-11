@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-	gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Physics2DPlugin)
+	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
 
 	// Scroll variable

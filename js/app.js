@@ -1,20 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-
+	
+	const isMobile = window.innerWidth < 768;
+	if (isMobile) {
+		document.querySelectorAll('[gradient-evolve]').forEach(el => {
+			el.style.background = 'linear-gradient(255deg, #facb0e, #f06ba8 30%, #78bae6 65%, #fff)';
+		});
+		// Отключаем ::before анимацию через класс
+		document.querySelectorAll('[gradient-evolve]').forEach(el => {
+			el.classList.add('no-animate');
+		});
+	}
 
 	// Scroll variable
 	window.addEventListener("scroll", () => {
 		document.documentElement.style.setProperty("--scrollTop", `${window.scrollY}px`);
 	});
 
-	// Smooth scroll
-	ScrollSmoother.create({
-		wrapper: ".wrapper",
-		content: ".content",
-		smooth: 1,
-		effects: true,
-		smoothTouch: 0.1,
-	});
+	if (!isMobile) {
+		ScrollSmoother.create({
+			wrapper: ".wrapper",
+			content: ".content",
+			smooth: 1,
+			effects: true,
+			smoothTouch: 0.1,
+		});
+	} else {
+		// На мобиле только effects без smooth
+		ScrollSmoother.create({
+			wrapper: ".wrapper",
+			content: ".content",
+			smooth: 0,
+			effects: false,
+			smoothTouch: 0,
+		});
+	}
 
 	// Animations
 	// Дополнительные GSAP анимации
@@ -98,7 +118,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.secHero',
 			start: 'top top',
 			end: '+=500',
-			scrub: true
+			scrub: 1
 		}
 	})
 	gsap.fromTo('.hero__comp', { 
@@ -110,7 +130,7 @@ tl1.to("#hero-cross-group", {
 		start: 'top top',
 		//markers: true,
 		end: '+=400',
-		scrub: true
+		scrub: 1
 		}
 	})
 	gsap.to(overlayRef, {
@@ -122,7 +142,7 @@ tl1.to("#hero-cross-group", {
 			end: "+=100%",
 			ease: "none",
 			//markers: true,
-			scrub: true,
+			scrub: 1,
 			pin: true,
 		},
 	})
@@ -141,7 +161,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.pin_item',
 			start: 'bottom bottom',
 			end: '+=100%',
-			scrub: true,
+			scrub: 1,
 			pin:true,
 		},
 	})
@@ -154,7 +174,7 @@ tl1.to("#hero-cross-group", {
 		trigger: '.first_text',
 		start: 'top top',
 		end: '+=100',
-		scrub: true,
+		scrub: 1,
 		
 		}
 	})
@@ -166,7 +186,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_text',
 			start: 'center 40%',
 			end: '+=100',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_text", {
@@ -178,7 +198,7 @@ tl1.to("#hero-cross-group", {
 		trigger: '.second_text',
 		start: 'top top',
 		end: '+=100',
-		scrub: true,
+		scrub: 1,
 		
 		}
 	})
@@ -215,7 +235,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: 'top top',
 			end: '+=30%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".first_s", {
@@ -225,7 +245,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '60% top',
 			end: '+=30%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_s", {
@@ -236,7 +256,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '100% top',
 			end: '+=30%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".cactus_sec_img2", {
@@ -247,7 +267,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '100% top',
 			end: '+=100%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_sf", {
@@ -265,7 +285,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '120% top',
 			end: '+=40%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_sf", {
@@ -282,7 +302,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '160% top',
 			end: '+=40%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 
@@ -303,7 +323,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '125% top',
 			end: '+=40%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_sl", {
@@ -320,7 +340,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '165% top',
 			end: '+=35%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_sl2", {
@@ -339,7 +359,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '120% top',
 			end: '+=40%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_sl2", {
@@ -356,7 +376,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '160% top',
 			end: '+=40%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_stree", {
@@ -374,7 +394,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '120% top',
 			end: '+=40%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_stree", {
@@ -391,7 +411,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '160% top',
 			end: '+=40%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.fromTo(".second_s", {
@@ -401,7 +421,7 @@ tl1.to("#hero-cross-group", {
 			trigger: '.first_s',
 			start: '170% top',
 			end: '+=30%',
-			scrub: true,
+			scrub: 1,
 		}
 	})
 	gsap.to(".cactus",  {
@@ -414,7 +434,7 @@ tl1.to("#hero-cross-group", {
 		start: '145% top',
 		end: '+=20%',
 		//markers: true,
-		scrub: true,
+		scrub: 1,
 		}
 	});
 	// -- CACTUS PIN SECTION END
@@ -485,7 +505,7 @@ let tl = gsap.timeline({
     trigger: "#last-reveal-section",
     start: "top top",
     end: "bottom+=300 top",
-    scrub: true,
+    scrub: 1,
     pin: true,
   }
 });
@@ -636,6 +656,33 @@ section.addEventListener('mouseleave', () => {
     });
 });
 
+if (!isMobile) {
+    section.addEventListener('mousemove', (e) => {
+    const { innerWidth, innerHeight } = window;
+    
+    // Нормализуем позицию от -1 до 1
+    const x = (e.clientX / innerWidth - 0.5) * 2;
+    const y = (e.clientY / innerHeight - 0.5) * 2;
+    
+    gsap.to(comp, {
+        x: x * 30,   // максимум 30px по горизонтали
+        y: y * 20,   // максимум 20px по вертикали
+        duration: 0.8,
+        ease: "power2.out",
+    });
+});
+
+// Возврат на место когда курсор ушёл
+section.addEventListener('mouseleave', () => {
+    gsap.to(comp, {
+        x: 0,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.out",
+    });
+});
+}
+
 
 
 let itemsL = gsap.utils.toArray('.gallery__left .gallery__item')
@@ -665,3 +712,5 @@ let itemsL = gsap.utils.toArray('.gallery__left .gallery__item')
 			}
 		})
 	})
+
+

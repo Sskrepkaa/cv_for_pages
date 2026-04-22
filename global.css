@@ -218,3 +218,25 @@ body {
 	font-size: calc(var(--index) * 1.5);
   letter-spacing: calc(var(--index) / 18);
 }
+
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column-reverse;  /* реверс колонок */
+    }
+
+    .gallery__left,
+    .gallery__right {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .gallery__item {
+        max-width: 90vw;  /* на всю ширину */
+        width: 90vw;
+    }
+}
+
+
+.no-animate::before {
+    animation: none !important;
+}

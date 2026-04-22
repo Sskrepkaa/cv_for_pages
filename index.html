@@ -27,45 +27,58 @@
     <div class="wrapper bg-white">
       <div class="content min-h-screen">
         <!-- Hero Section -->
-        <section class="secHero relative min-h-[130vh] flex bg-black overflow-hidden will-change-transform">
-          <div class="pl-0 md:pl-20 lg:pl-48">
-            <div data-speed="0.5" class="hero__allTitle text-left pl-[10vw] md:pl-0 md:pt-36">
-              <p class="hero__prefix w-[70vw] font-[pixel-c] text-white leading-relaxed pl-2">
-                &lt;Full-Stack Engineering&gt; &nbsp; &lt;UX/UI&gt; &nbsp; &lt;Resume&gt;
-              </p>
-              <h1 class="hero__title text-[15vw] lg:text-[13vw] text-white  font-[unbound-c] font-bold md:-mt-8">
-                HELLO
-              </h1>
-            </div>
-          </div>
+        <section id="hero-reveal-section" class="will-change-transform relative h-[100dvh] overflow-hidden">
+          <!-- Нижняя секция (будет раскрываться под маской) -->
+          <div gradient-evolve class="w-full h-full flex flex-col lg:flex-row px-8 py-12 items-center justify-center relative overflow-hidden">
 
-          <div class="absolute w-[20vw] bottom-[0] sm:bottom-[10vh] -left-[5vw] z-1 rotate-270">
-            <p class="font-[pixel-c] text-white text-2xl text-nowrap">
-              welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website
-            </p>
-          </div>
+              <div class="pl-0 md:pl-20 lg:pl-48 z-20 relative">
+                <div class="hero_allTitle text-left pl-[10vw] md:pl-0 md:pt-20 ">
+                  <p class="hero__prefix w-[70vw] font-[pixel-c] text-white leading-relaxed pl-2">
+                    &lt;Full-Stack Engineering&gt; &nbsp; &lt;UX/UI&gt; &nbsp; &lt;Resume&gt;
+                  </p>
+                  <h1 class="hero__title text-[15vw] lg:text-[13vw] text-white  font-[unbound-c] font-bold md:-mt-8">
+                    HELLO
+                  </h1>
+                  <div class="flex flex-col space-y-2">
+                    <a href="/cv.pdf" target="_blank" rel="noopener noreferrer"
+                      class="underline hover:text-fuchsia-600 transition">My CV ↗</a>
+                    <a href="http://linkedin.com/in/makukhin-dev" class="underline hover:text-blue-500 transition">My LinkedIn ↗</a>
+                    <a href="http://github.com/Sskrepkaa" class="underline hover:text-rose-500 transition">My GitHub ↗</a>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="absolute w-[20vw] bottom-[0] sm:bottom-[10vh] -left-[5vw] z-1 rotate-270">
+                <p class="font-[pixel-c] text-white text-2xl text-nowrap">
+                  welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website welcome to my website
+                </p>
+              </div>
 
-            <img src="./images/comp.png" data-speed="0.8" alt="Hero Image" class="hero__comp max-w-none absolute bottom-[30vh] -right-70 sm:right-0 z-10" />
-            <img src="./images/arrow.png" alt="Hero Image" class="w-20 absolute bottom-[32vh] left-1/2 -ml-8 z-1 animate-bounce" />
-            <img src="./images/dots.svg" data-speed="0.3" alt="down" class="hero__things  absolute bottom-0 -left-20 sm:bottom-10 sm:-left-35 z-1" />
-            <img src="./images/dots.svg" data-speed="0.6" alt="up" class=" hero__things  absolute -top-20 -right-35 sm:-top-10 z-1" />
-            <img src="./images/kreuz.svg" data-speed="0.4" alt="Hero Image" class="hero__things absolute -top-35 -right-35 sm:-top-10 z-1" />
+              <img src="./images/comp.png" alt="Hero Image" class="hero__comp_TEST max-w-none absolute bottom-[10vh] right-[-5vw] sm:right-[-2vw] z-20 opacity-0" style="width: calc(var(--index) * 32);" />
+              
+          </div>
+        
+          <!-- SVG с маской -->
+          <svg class="absolute inset-0 w-full h-full z-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <defs>
+                <mask id="hero-cross-mask" maskUnits="objectBoundingBox">
+                  <rect width="100%" height="100%" fill="white" />
+                  <g id="hero-cross-group" >
+                    <path d="M108 88.7c-10.8 0-19.7 8.8-19.7 19.7v47.4c0 1.9-1.5 3.4-3.4 3.4h-8.6
+                      c-1.9 0-3.4-1.5-3.4-3.4v-47.4c0-10.8-8.8-19.7-19.7-19.7H6.4
+                      c-1.9 0-3.4-1.5-3.4-3.4v-8c0-1.9 1.5-3.4 3.4-3.4h46.9
+                      c10.8 0 19.7-8.8 19.6-19.7V6.4c0-1.9 1.5-3.4 3.4-3.4H85
+                      c1.9 0 3.4 1.5 3.4 3.4v47.8c0 10.8 8.8 19.7 19.7 19.7h46.6
+                      c1.9 0 3.4 1.5 3.4 3.4v8c0 1.9-1.5 3.4-3.4 3.4H108z" fill="black"/>
+                  </g>
+                </mask>
+              </defs>
+            
+              <!-- Белый слой с маской -->
+              <rect width="100%" height="100%" fill="white" mask="url(#hero-cross-mask)" />
+            </svg>
         </section>
 
-
-
-        <!-- <h1 class="text-2xl md:text-3xl font-bold text-white uppercase text-center leading-tight relative z-1">
-          <span class="inline-block" id="howabout_text">
-            How about we create something bold,
-          </span>
-          <span id="together_text" class="inline-block opacity-0 scale-75 tracking-tight uppercase">
-            together
-          </span>
-        </h1>
-        <div class="flex flex-col space-y-2 z-1">
-          <a href="#" class="underline hover:text-gray-300 transition">My CV ↗</a>
-          <a href="#" class="underline hover:text-gray-300 transition">My GitHub ↗</a>
-        </div> -->
 
 
       
@@ -198,15 +211,49 @@
             <img src="./images/tree.svg" alt="tree" class=" hero__things  second_stree absolute -bottom-[10%] right-0 z-1" />
         </section>
 
+        <div class="portfolio">
+          <div class="gallery-container">
+            <div class="gallery">
+    
+              <div data-speed=".9" class="gallery__left">
+      
+                <img class="gallery__item" src="./images/flat.png" alt="Alt">
+                <img class="gallery__item" src="./images/dash2.png" alt="Alt">
+      
+    
+      
+              </div>
+
+              <div data-speed="1.1" class="gallery__right">
+      
+                <div class="text-block gallery__item">
+                  <h2 class="about__title font-[druk] font-bold leading-tight">&lt;/ Projects></h2>
+                  <!-- <p class="text-block__p">Lorem ipsum dolor sit amet</p> -->
+                </div>
+      
+                <img class="gallery__item" src="./images/dash.png" alt="Alt">
+      
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- <section class="w-full flex items-center justify-center">
+          <img 
+            src="./images/dash.png" 
+            alt="Photo"
+            class="w-full h-full object-cover "
+            style="max-height: 90vh;"
+          />
+        </section> -->
+
+
+        
         
 
-
-
-        
-        
-
-        <!-- Menu Section -->
-        <section id="reveal-section" class="will-change-transform relative min-h-[100dvh] overflow-hidden z-1">
+        <!-- Last Section -->
+        <section id="last-reveal-section" class="will-change-transform will-change-scroll relative min-h-[100dvh] overflow-hidden z-1">
           <!-- Нижняя секция (будет раскрываться под маской) -->
           <div gradient-evolve class="h-full flex flex-col items-center justify-center z-1 relative overflow-hidden">
             <div class="container mx-auto px-8 py-12 flex flex-col lg:flex-row justify-between z-2">

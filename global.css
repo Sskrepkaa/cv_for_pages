@@ -62,6 +62,15 @@ body {
   will-change: transform;
   transition: var(--transition);
 }
+.hero_allTitle {
+    opacity: 0;
+}
+
+.hero__comp_TEST {
+  width: calc(var(--index) * 40);
+  will-change: transform;
+  transition: var(--transition);
+}
 
 .hero__things {
   width: calc(var(--index) * 20);
@@ -119,6 +128,13 @@ body {
     transition: var(--transition);
   }
 }
+@media (max-width: 640px) {
+  .hero__comp_TEST {
+    width: calc(var(--index) * 60);
+    will-change: transform;
+    transition: var(--transition);
+  }
+}
 
 
 @keyframes loopGradient {
@@ -157,4 +173,48 @@ body {
   );
   animation: loopGradient 6s ease-in-out infinite;
   opacity: 0;
+}
+
+
+.gallery-container {
+  width: 100%;
+  max-width: 100%;
+  background-color: rgb(43, 43, 43);
+}
+
+.gallery {
+	display: flex;
+	padding: calc(var(--index) * 8) 0;
+}
+.gallery > * {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.gallery__item {
+	max-width: calc(var(--index) * 22);
+	margin-bottom: var(--gallery-gap);
+	max-height: 180vh;
+}
+.gallery__left {
+	margin-top: calc(var(--gallery-gap) * 1.75);
+}
+.gallery__right .gallery__item {
+	margin: 0;
+	margin-top: var(--gallery-gap);
+}
+.text-block {
+	color: var(--color-text);
+	position: relative;
+}
+.text-block__h {
+	font-size: calc(var(--index) * 1.5);
+  letter-spacing: calc(var(--index) / 18);
+	color: var(--color-header);
+	margin-bottom: 1.5rem;
+}
+.text-block__p {
+	font-size: calc(var(--index) * 1.5);
+  letter-spacing: calc(var(--index) / 18);
 }

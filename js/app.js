@@ -25,16 +25,69 @@ document.addEventListener("DOMContentLoaded", () => {
 		return Math.random() * (max - min) + min;
 	  }
 
-	// Анимация появления заголовка
-	gsap.fromTo('.hero__allTitle', { opacity: 1 }, {
-		opacity: 0,
-		scrollTrigger: {
-		trigger: '.hero__allTitle',
-		start: "top top",
-      	end: "+=300",
-		scrub: true
-		},
+
+		// Устанавливаем начальные состояния
+
+		gsap.set("#hero-cross-group", { x: "50vw", scale: 0});
+	
+
+	gsap.to("#hero-cross-group", {
+		// scrollTrigger: {
+		// 	trigger: "#hero-reveal-section",  // секция, которую пинить
+		// 	start: "top center",            // когда верх секции дойдет до верха viewport
+		// 	end: 'top top',
+		// 	scrub: true,
+		// 	},
+		y: "50vh",
+		rotation: 45,
+		scale: 3,
+		transformOrigin: "center center",
+		duration: 1,
+		ease: "power2.out",
+		delay: 1,                          // ← вместо scrollTrigger
+		onComplete: () => {
+			// Шаг 2: после появления сразу запускаем раскрытие
+			tl1.play();
+		}
 	})
+//gsap.set("#hero-cross-group", {  y: "50vh", rotation: 45, scale: 3,});
+
+// Создаём общий timeline
+let tl1 = gsap.timeline({
+   paused: true 
+});
+
+// 1️⃣ Крестик и текст двигаются почти вместе
+tl1.to("#hero-cross-group", {
+  scale: 50,
+  rotation: 240,
+  ease: "power4.out",
+  transformOrigin: "center center",
+  duration: 4
+}, 0) // "0" означает — начинать одновременно с первой анимацией
+  // Текст появляется ближе к концу раскрытия
+  .to(".hero_allTitle", {
+      opacity: 1,
+      ease: "power2.out",
+      duration: 0.8,
+  }, 1.6)  // ← старт через 1.8s после начала tl1 (когда крестик уже почти раскрылся)
+  .to(".hero__comp_TEST", {
+      opacity: 1,
+      ease: "power2.out",
+      duration: 0.8,
+  }, 2.0);
+//---------------------
+	// Анимация появления заголовка
+	// gsap.fromTo('.hero_allTitle', { opacity: 1 }, {
+	// 	opacity: 0,
+	// 	scrollTrigger: {
+	// 	trigger: '.hero_allTitle',
+	// 	start: "center top",
+    //   	end: "+=800",
+	// 	scrub: true,
+	// 	markers: true
+	// 	},
+	// })
 	gsap.fromTo('.hero__comp', { 
 		scale: 0.8,
 		x:0
@@ -405,7 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	gsap.to("#cross-group", {
 		scrollTrigger: {
-			trigger: "#reveal-section",  // секция, которую пинить
+			trigger: "#last-reveal-section",  // секция, которую пинить
 			start: "top center",            // когда верх секции дойдет до верха viewport
 			end: 'top top',
 			scrub: true,
@@ -413,7 +466,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		y: "50vh",
 		rotation: 45,
 		scale: 3,
-		markers: true,
 		transformOrigin: "center center",
 		duration: 1,
 		ease: "power2.out",
@@ -430,12 +482,11 @@ gsap.set(".together_all", { opacity: 0 });
 // Создаём общий timeline
 let tl = gsap.timeline({
   scrollTrigger: {
-    trigger: "#reveal-section",
+    trigger: "#last-reveal-section",
     start: "top top",
     end: "bottom+=300 top",
     scrub: true,
     pin: true,
-    markers: true // можешь убрать потом
   }
 });
 
@@ -552,3 +603,65 @@ tl.to("#cross-group", {
       status.classList.add("opacity-100");
     }
   });
+
+
+
+
+
+  const comp = document.querySelector('.hero__comp_TEST');
+const section = document.querySelector('#hero-reveal-section');
+
+section.addEventListener('mousemove', (e) => {
+    const { innerWidth, innerHeight } = window;
+    
+    // Нормализуем позицию от -1 до 1
+    const x = (e.clientX / innerWidth - 0.5) * 2;
+    const y = (e.clientY / innerHeight - 0.5) * 2;
+    
+    gsap.to(comp, {
+        x: x * 30,   // максимум 30px по горизонтали
+        y: y * 20,   // максимум 20px по вертикали
+        duration: 0.8,
+        ease: "power2.out",
+    });
+});
+
+// Возврат на место когда курсор ушёл
+section.addEventListener('mouseleave', () => {
+    gsap.to(comp, {
+        x: 0,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.out",
+    });
+});
+
+
+
+let itemsL = gsap.utils.toArray('.gallery__left .gallery__item')
+
+	itemsL.forEach(item => {
+		gsap.fromTo(item, { opacity: 0, x: -50 }, {
+			opacity: 1, x: 0,
+			scrollTrigger: {
+				trigger: item,
+				start: 'top 90%',
+				end: 'top 40%',
+				scrub: true
+			}
+		})
+	})
+
+	let itemsR = gsap.utils.toArray('.gallery__right .gallery__item')
+
+	itemsR.forEach(item => {
+		gsap.fromTo(item, { opacity: 0, x: 50 }, {
+			opacity: 1, x: 0,
+			scrollTrigger: {
+				trigger: item,
+				start: 'top 95%',
+				end: 'top 45%',
+				scrub: true
+			}
+		})
+	})

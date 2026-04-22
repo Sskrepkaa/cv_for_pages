@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-	
+
 	const isMobile = window.innerWidth < 768;
 	if (isMobile) {
 		document.querySelectorAll('[gradient-evolve]').forEach(el => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.documentElement.style.setProperty("--scrollTop", `${window.scrollY}px`);
 	});
 
-	if (!isMobile) {
+	
 		ScrollSmoother.create({
 			wrapper: ".wrapper",
 			content: ".content",
@@ -25,16 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			effects: true,
 			smoothTouch: 0.1,
 		});
-	} else {
-		// На мобиле только effects без smooth
-		ScrollSmoother.create({
-			wrapper: ".wrapper",
-			content: ".content",
-			smooth: 0,
-			effects: false,
-			smoothTouch: 0,
-		});
-	}
+	
 
 	// Animations
 	// Дополнительные GSAP анимации

@@ -496,7 +496,7 @@ let tl = gsap.timeline({
     trigger: "#last-reveal-section",
     start: "top top",
     end: "bottom+=300 top",
-    scrub: 1,
+    scrub: true,
     pin: true,
   }
 });
